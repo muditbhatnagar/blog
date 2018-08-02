@@ -1,0 +1,13 @@
+<h1> New Blog <h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+ 
+<p>
+  <strong>Image:</strong>
+
+  <img src="<%= @blog.image %>" style="height: 150px; width: 300px;">
+</p>
+<%= link_to 'Back', blogs_path %>

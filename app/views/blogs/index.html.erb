@@ -1,0 +1,30 @@
+<h1>Listing blogs</h1>
+
+ <%= form_for :blog, url: blogs_path, :method => 'get' do |f| %>
+ <p>
+ <%=text_field_tag :title %>
+ <%= submit_tag "search" %>
+ </p>
+<% end %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Image</th>
+  </tr>
+ 
+  <% @blog.each do |blog| %>
+    <tr>
+      <td><%= blog.title %></td>
+      <td> <img src="<%= blog.image %>" style="height: 150px; width: 300px;"></td>
+      <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+      <td><%= link_to 'Show', blog_path(blog) %></td>
+      <td><%= link_to 'Destroy', blog_path(blog),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <p>
+   <% end %>
+</table>
+
+

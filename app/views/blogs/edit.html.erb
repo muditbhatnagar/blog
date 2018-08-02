@@ -1,0 +1,19 @@
+<h1>Editing Blog</h1>
+ 
+<%= form_for :blog, url: blogs_path(@blog) do |f| %>
+
+<p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ <p>
+    <%= f.label :Image %><br>
+    <%= f.file_field :image %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
